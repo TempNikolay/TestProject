@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Diagnostics;
+using System.Xml.Linq;
 using System.Xml.Xsl;
 using TestProject.Extensions;
 using TestProject.Helpers;
@@ -28,10 +29,18 @@ namespace TestProject
         /// <param name="e"></param>
         private void calcXmlButton_Click(object sender, EventArgs e)
         {
-            _pathToResult = $"{fileResultNameText.Text}.xml";
+            try
+            {
+                _pathToResult = $"{fileResultNameText.Text}.xml";
 
-            viewModel.PerformAllСalculations(pathToXsltText.Text, pathToXmlText.Text, _pathToResult);
-            viewModel.LoadEmployeeInfo(resultList, _pathToResult);
+                viewModel.PerformAllСalculations(pathToXsltText.Text, pathToXmlText.Text, _pathToResult);
+                viewModel.LoadEmployeeInfo(resultList, _pathToResult);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Debug.WriteLine($"Err: {ex}");
+            }
         }
 
         /// <summary>
@@ -41,9 +50,17 @@ namespace TestProject
         /// <param name="e"></param>
         private void addItemButton_Click(object sender, EventArgs e)
         {
-            var addItemForm = new AddItemForm(pathToXmlText.Text);
+            try
+            {
+                var addItemForm = new AddItemForm(pathToXmlText.Text);
 
-            addItemForm.ShowDialog();
+                addItemForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Debug.WriteLine($"Err: {ex}");
+            }
         }
 
         /// <summary>
@@ -53,7 +70,15 @@ namespace TestProject
         /// <param name="e"></param>
         private void toXmlButton_Click(object sender, EventArgs e)
         {
-            SelectNewFile(pathToXmlText, "XML files (*.xml)|*.xml");
+            try
+            {
+                SelectNewFile(pathToXmlText, "XML files (*.xml)|*.xml");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Debug.WriteLine($"Err: {ex}");
+            }
         }
 
         /// <summary>
@@ -63,7 +88,15 @@ namespace TestProject
         /// <param name="e"></param>
         private void toXsltButton_Click(object sender, EventArgs e)
         {
-            SelectNewFile(pathToXsltText, "XSLT files (*.xslt)|*.xslt");
+            try
+            {
+                SelectNewFile(pathToXsltText, "XSLT files (*.xslt)|*.xslt");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Debug.WriteLine($"Err: {ex}");
+            }
         }
 
         /// <summary>
