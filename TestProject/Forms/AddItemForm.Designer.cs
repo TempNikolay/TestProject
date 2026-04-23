@@ -51,6 +51,7 @@
             // 
             // nameText
             // 
+            nameText.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             nameText.Location = new Point(97, 9);
             nameText.Name = "nameText";
             nameText.Size = new Size(256, 31);
@@ -76,6 +77,7 @@
             // 
             // surnameText
             // 
+            surnameText.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             surnameText.Location = new Point(97, 46);
             surnameText.Name = "surnameText";
             surnameText.Size = new Size(256, 31);
@@ -92,6 +94,7 @@
             // 
             // amountText
             // 
+            amountText.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             amountText.Location = new Point(97, 83);
             amountText.Name = "amountText";
             amountText.Size = new Size(256, 31);
@@ -108,6 +111,7 @@
             // 
             // monthText
             // 
+            monthText.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             monthText.Location = new Point(97, 120);
             monthText.Name = "monthText";
             monthText.Size = new Size(256, 31);
@@ -128,7 +132,7 @@
             Controls.Add(nameText);
             Controls.Add(AddItemButton);
             Name = "AddItemForm";
-            Text = "AddItemForm";
+            Text = "Добавление элемента";
             ResumeLayout(false);
             PerformLayout();
         }

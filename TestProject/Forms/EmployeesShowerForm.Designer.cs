@@ -163,6 +163,7 @@
             addItemButton.TabIndex = 6;
             addItemButton.Text = "Добавить элемент";
             addItemButton.UseVisualStyleBackColor = true;
+            addItemButton.Visible = false;
             addItemButton.Click += addItemButton_Click;
             // 
             // EmployeesShowerForm
@@ -177,7 +178,7 @@
             Controls.Add(toXsltGroup);
             Controls.Add(toXmlGroup);
             Name = "EmployeesShowerForm";
-            Text = "EmployeesShower";
+            Text = "Информация о сотрудниках";
             toXmlGroup.ResumeLayout(false);
             toXmlGroup.PerformLayout();
             toXsltGroup.ResumeLayout(false);
